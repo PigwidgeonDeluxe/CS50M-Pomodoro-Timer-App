@@ -12,6 +12,16 @@ const styles = StyleSheet.create({
       paddingTop: Constants.statusBarHeight,
     },
 
+    breakContainer: {
+      alignItems: "center",
+      padding: 10,
+    },
+
+    breakText: {
+      fontWeight: 'bold',
+      fontSize: 20,
+    },
+
   timeContainer: {
       alignItems: "center",
       padding: 10,
@@ -58,6 +68,22 @@ const styles = StyleSheet.create({
     elevation: 2, // Android
     
   },
+
+  workText: {
+    fontWeight: 'bold', 
+    fontSize: 20,
+  },
+
+  breakText: {
+    fontWeight: 'bold', 
+    fontSize: 20,
+  },
+
+  timeEntry: {
+    alignItems: "center",
+    flexDirection: 'row',
+    padding: 10,
+  }
 
 
   })

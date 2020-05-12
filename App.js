@@ -1,9 +1,11 @@
+<script src="http://192.168.1.233:8097"></script>
 import React from 'react';
 import { Text, View, TouchableOpacity, TouchableHighlightBase } from 'react-native';
 
 import styles from './AppStyle';
 import FormattedTime from './FormattedTime';
 import {vibrate} from './utils'
+import SetTimeForm from './SetTimeForm'
 
 export default class App extends React.Component {
 
@@ -11,11 +13,14 @@ clockFunc = () => {};
 
   state = {
     increment: 1000,
-    time: 6,
-    workTime: 6,
-    breakTime: 4,
+    time: 25*60,
+    workTime: 25*60,
+    breakTime: 5*60,
+    longBreakTime: 30*60,
+    breakNumber: 0,
     toggleText: 'Start',
     statusText: 'Paused!',
+    showForm: false,
   }
 
   working = true;
@@ -54,21 +59,27 @@ clockFunc = () => {};
   resetTimer = () => {
     this.setState({time: this.state.workTime, toggleText: 'Start'});
     this.runTimer = false;
-    this.working = false;
+    this.working = true;
     clearInterval(this.clockFunc);
     this.updateStatus();
   }
 
+  // runs whenever a the timer counts down to 0
   timerComplete = () => {
     if (this.state.time < 1){
       vibrate();
       this.working = !this.working;
-      clearInterval(this.clockFunc);
+      // clearInterval(this.clockFunc);
       if (this.working){
         this.setState({time: this.state.workTime});
       } else {
-        this.setState({time: this.state.breakTime});
+        if (this.state.breakNumber < 4){
+          this.setState(prevState => ({time: this.state.breakTime, breakNumber: prevState.breakNumber + 1}));
+        } else {
+          this.setState({time: this.state.longBreakTime, breakNumber: 0});
+        }
       }
+      this.updateStatus();
     }
   }
 
@@ -83,6 +94,15 @@ clockFunc = () => {};
     }
   }
 
+  showForm = () => { // show set timer form
+    this.resetTimer();
+    this.setState({showForm: true})
+  } 
+
+  setTime = props => {
+    this.setState({workTime: props.workTime, breakTime: props.breakTime,longBreakTime: props.longBreakTime});
+  }
+
   componentDidUpdate(prevProps, prevState){
     this.timerComplete();
   }
@@ -92,10 +112,16 @@ clockFunc = () => {};
   }
 
   render() {
-    
+    if (this.state.showForm) return <SetTimeForm onSubmit={this.setTime} />
+
     return (
+      
       <View style={styles.container}>
         
+        <View style={styles.breakContainer}>
+          <Text style={styles.breakText}>Break #{this.state.breakNumber}</Text>
+        </View>
+
         <View style={styles.statusContainer}>
           <Text style={styles.statusText}> {this.state.statusText}</Text>
         </View>
@@ -105,7 +131,7 @@ clockFunc = () => {};
         </View>
 
         <View style={styles.topRow}>
-          <TouchableOpacity style={styles.button} onPress={this.resetTimer}>
+          <TouchableOpacity style={styles.button} onPress={this.showForm}>
             <Text>Set Timer</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button} onPress={this.resetTimer}>
