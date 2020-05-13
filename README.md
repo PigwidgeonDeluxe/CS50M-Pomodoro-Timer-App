@@ -11,10 +11,10 @@ Base code downloaded from https://docs.cs50.net/mobile/2020/x/projects/1/project
 - get familiar with mobile app development workflow
 
 ## Screenshots
-![Main screen](https://github.com/PigwidgeonDeluxe/CS50M-Pomodoro-Timer-App/blob/master/screenshots/Screenshot_20200513-165317.jpg)
+![Main screen](https://github.com/PigwidgeonDeluxe/CS50M-Pomodoro-Timer-App/blob/master/screenshots/Screenshot_20200513-165317.jpg =350x)
 
-![Set Custom Time screen](https://github.com/PigwidgeonDeluxe/CS50M-Pomodoro-Timer-App/blob/master/screenshots/Screenshot_20200513-165323.jpg)
+![Set Custom Time screen](https://github.com/PigwidgeonDeluxe/CS50M-Pomodoro-Timer-App/blob/master/screenshots/Screenshot_20200513-165323.jpg =350x)
 
-![Changing Custom Time example](https://github.com/PigwidgeonDeluxe/CS50M-Pomodoro-Timer-App/blob/master/screenshots/Screenshot_20200513-165345.jpg)
+![Changing Custom Time example](https://github.com/PigwidgeonDeluxe/CS50M-Pomodoro-Timer-App/blob/master/screenshots/Screenshot_20200513-165345.jpg =350x)
 
-![Timer in use](https://github.com/PigwidgeonDeluxe/CS50M-Pomodoro-Timer-App/blob/master/screenshots/Screenshot_20200513-165459.jpg)
+![Timer in use](https://github.com/PigwidgeonDeluxe/CS50M-Pomodoro-Timer-App/blob/master/screenshots/Screenshot_20200513-165459.jpg =350x)
