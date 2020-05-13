@@ -11,14 +11,17 @@ Base code downloaded from https://docs.cs50.net/mobile/2020/x/projects/1/project
 - get familiar with mobile app development workflow
 
 ## Screenshots
-Main screen
+<div style="text-align:center">
+
+- Main screen
 <img src="https://github.com/PigwidgeonDeluxe/CS50M-Pomodoro-Timer-App/blob/master/screenshots/Screenshot_20200513-165317.jpg" width="350">
 
-Set Custom Time screen
+- Set Custom Time screen
 <img src="https://github.com/PigwidgeonDeluxe/CS50M-Pomodoro-Timer-App/blob/master/screenshots/Screenshot_20200513-165323.jpg" width="350">
 
-Changing Custom Time example
+- Changing Custom Time example
 <img src="https://github.com/PigwidgeonDeluxe/CS50M-Pomodoro-Timer-App/blob/master/screenshots/Screenshot_20200513-165345.jpg" width="350">
 
-Timer in use
+- Timer in use
 <img src="https://github.com/PigwidgeonDeluxe/CS50M-Pomodoro-Timer-App/blob/master/screenshots/Screenshot_20200513-165459.jpg" width="350">
+</div>
