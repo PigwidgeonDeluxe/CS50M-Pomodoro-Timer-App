@@ -57,7 +57,7 @@ clockFunc = () => {};
   }
 
   resetTimer = () => {
-    this.setState({time: this.state.workTime, toggleText: 'Start'});
+    this.setState({time: this.state.workTime, toggleText: 'Start', breakNumber: 0});
     this.runTimer = false;
     this.working = true;
     clearInterval(this.clockFunc);
@@ -100,7 +100,7 @@ clockFunc = () => {};
   } 
 
   setTime = props => {
-    this.setState({workTime: props.workTime, breakTime: props.breakTime,longBreakTime: props.longBreakTime});
+    this.setState({time: props.workTime, workTime: props.workTime, breakTime: props.breakTime, longBreakTime: props.longBreakTime, showForm: false});
   }
 
   componentDidUpdate(prevProps, prevState){
